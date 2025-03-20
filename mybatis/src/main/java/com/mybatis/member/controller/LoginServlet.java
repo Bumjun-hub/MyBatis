@@ -25,11 +25,15 @@ public class LoginServlet extends HttpServlet {
 		m.setUserPwd(pwd);
 
 		// Member ServiceImpl mi = new MemberServiceImpl();
+		// Service 호출
 		Member loginUser = new MemberServiceImpl().loginMember(m);
 
 		if (loginUser != null) {
 			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());
+		} else {
+			request.setAttribute("errorMsg", "로그인실패");
+			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request,response);
 		}
 
 	}

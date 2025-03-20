@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <!DOCTYPE html>
+<% session.invalidate(); %>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="WEB-INF/views/member/main.jsp"/>
+<script>
+location.href = "index.jsp";
+</script>
 </body>
 </html>

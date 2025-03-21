@@ -7,7 +7,7 @@ import com.mybatis.member.dao.MemberDao;
 import com.mybatis.member.vo.Member;
 
 public class MemberServiceImpl implements MemberService {
-	
+
 	private MemberDao mDao = new MemberDao();
 
 	@Override
@@ -18,4 +18,20 @@ public class MemberServiceImpl implements MemberService {
 		return loginUser;
 	}
 
+	@Override
+	public int checkId(String userId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int checkid = mDao.checkId(sqlSession, userId);
+		sqlSession.close();
+		return checkid;
+
+	}
+
+	public int insertMember(Member m) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int insert = mDao.insertMember(sqlSession, m);
+		sqlSession.close();
+		return insert;
+
+	}
 }

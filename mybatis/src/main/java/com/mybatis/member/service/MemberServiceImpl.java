@@ -30,8 +30,13 @@ public class MemberServiceImpl implements MemberService {
 	public int insertMember(Member m) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int insert = mDao.insertMember(sqlSession, m);
+
+		if (insert > 0) {
+			sqlSession.commit();
+			
+
+		}
 		sqlSession.close();
 		return insert;
-
 	}
 }

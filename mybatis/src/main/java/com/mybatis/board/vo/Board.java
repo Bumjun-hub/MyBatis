@@ -1,23 +1,21 @@
+
 package com.mybatis.board.vo;
 
 import java.sql.Date;
 
 public class Board {
-	
 	private int boardNo;
 	private String boardTitle;
 	private String boardContent;
 	private String boardWriter;
 	private int count;
-	private Date date;
+	private Date createDate;
 	private String status;
-	
-	
+
 	public Board() {
-		
 	}
-	
-	public Board(int boardNo, String boardTitle, String boardContent, String boardWriter, int count, Date date,
+
+	public Board(int boardNo, String boardTitle, String boardContent, String boardWriter, int count, Date createDate,
 			String status) {
 		super();
 		this.boardNo = boardNo;
@@ -25,7 +23,7 @@ public class Board {
 		this.boardContent = boardContent;
 		this.boardWriter = boardWriter;
 		this.count = count;
-		this.date = date;
+		this.createDate = createDate;
 		this.status = status;
 	}
 
@@ -69,12 +67,12 @@ public class Board {
 		this.count = count;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getCreateDate() {
+		return createDate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 
 	public String getStatus() {
@@ -88,11 +86,7 @@ public class Board {
 	@Override
 	public String toString() {
 		return "Board [boardNo=" + boardNo + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
-				+ ", boardWriter=" + boardWriter + ", count=" + count + ", date=" + date + ", status=" + status + "]";
+				+ ", boardWriter=" + boardWriter + ", count=" + count + ", createDate=" + createDate + ", status="
+				+ status + "]";
 	}
-
-	
-	
-	
-	
 }

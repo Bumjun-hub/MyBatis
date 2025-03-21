@@ -18,14 +18,14 @@ public class MemberInsertServlet extends HttpServlet {
 			throws ServletException, IOException {
 			Member m = new Member();
 			m.setUserId(request.getParameter("userId"));
-			m.setUserName(request.getParameter("userPwd"));
+			m.setUserPwd(request.getParameter("userPwd"));
 			m.setUserName(request.getParameter("userName"));
-			
+	
 			m.setEmail(request.getParameter("email"));
 			m.setBirthday(request.getParameter("birthday"));
 			m.setGender(request.getParameter("gender"));
 			m.setPhone(request.getParameter("phone"));
-			
+			m.setAddress(request.getParameter("address"));
 			int result = new MemberServiceImpl().insertMember(m);
 			
 			if(result>0) {
